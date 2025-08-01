@@ -80,9 +80,9 @@ Random Forest showed the best performance:
 
 ## Links
 
-- [Kaggle project](https://www.kaggle.com/...)
-- [GitHub repository](https://github.com/...)
-- [Profile in LinkedIn](https://www.linkedin.com/in/...)
+- [Kaggle project](https://www.kaggle.com/code/yaninakostiv/eda-house-prices)
+- [GitHub repository](https://github.com/SuperYanka/house-prices-regression)
+- [Profile in LinkedIn](https://www.linkedin.com/in/superyanka/)
 
 ---
 
@@ -163,9 +163,9 @@ Random Forest showed the best performance:
 
 ## Ссылки
 
-- [Проект на Kaggle](https://www.kaggle.com/...)
-- [Репозиторий на GitHub](https://github.com/...)
-- [Профиль в LinkedIn](https://www.linkedin.com/in/...)
+- [Проект на Kaggle](https://www.kaggle.com/code/yaninakostiv/eda-house-prices)
+- [Репозиторий на GitHub](https://github.com/SuperYanka/house-prices-regression)
+- [Профиль в LinkedIn](https://www.linkedin.com/in/superyanka/)
 
 ---
 
