@@ -41,9 +41,9 @@ Metrics (MAE, MSE, R²) and ROC/Confusion Matrix comparison graphs for models ar
 
 ### 5. Summary
 Random Forest showed the best performance:
-- MAE: …
-- MSE: …
-- R²: …
+- MAE: 0.039
+- MSE: 0.004
+- R²: 0.978
 
 ## Project structure
 
@@ -123,9 +123,9 @@ Random Forest showed the best performance:
 
 ### 5. Итог
 Лучшую производительность показал Random Forest:
-- MAE: …
-- MSE: …
-- R²: …
+- MAE: 0.039
+- MSE: 0.004
+- R²: 0.978
 
 ## Структура проекта
 
