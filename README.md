@@ -238,17 +238,6 @@ Mini-model `rf_small.pkl`, trained on 4 features:
 }
 ```
 
-**Example request:**
-
-```
-{
-  "OverallQual": 7,
-  "GrLivArea": 1800,
-  "GarageCars": 2,
-  "TotalBsmtSF": 900
-}
-```
-
 **Response body**
 
 {
