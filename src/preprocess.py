@@ -5,8 +5,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 
-def load_and_preprocess_data(train_path, test_path):
- 
+def load_and_preprocess_data(train_path, test_path, selected_features=None):
+
     train_df = pd.read_csv(train_path)
     test_df = pd.read_csv(test_path)
 
@@ -18,6 +18,10 @@ def load_and_preprocess_data(train_path, test_path):
     print("Логарифмируем целевой признак SalePrice → LogSalePrice...")
     train_df['LogSalePrice'] = np.log1p(train_df['SalePrice'])
     print("Колонка LogSalePrice успешно создана")
+
+    if selected_features is not None:
+        train_df = train_df[selected_features + ['SalePrice', 'LogSalePrice']]
+        test_df = test_df[selected_features]
 
     # Общий датафрейм для обработки признаков
     full_df = pd.concat([train_df.drop(columns=['SalePrice', 'LogSalePrice']), test_df])
@@ -41,7 +45,8 @@ def load_and_preprocess_data(train_path, test_path):
         transformers=[
             ('num', numeric_transformer, numeric_features),
             ('cat', categorical_transformer, categorical_features)
-        ]
+        ],
+        remainder='drop'
     )
 
     # Разделяем

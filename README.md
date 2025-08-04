@@ -51,11 +51,13 @@ Random Forest showed the best performance:
 
 ├── src/
 
-│ ├── preprocess.py # Data preprocessing
+│ ├── preprocess.py # Preprocessing data
 
-│ ├── train_lasso.py # Lasso training
+│ ├── train_lasso.py # Training Lasso
 
 │ ├── train_rf.py # RandomForest
+
+│ ├── train_small_rf.py # RandomForest model (4 features for API)
 
 │ └── ...
 
@@ -67,7 +69,51 @@ Random Forest showed the best performance:
 
 ├── submissions/ # CSV files for Kaggle
 
+├── submissions/ # Kaggle files
+
+├── deployment/ # API deployment
+
+│ ├── app/
+
+│ │ └── main.py # FastAPI application
+
+│ └── Dockerfile
+
 ├── README.md # This file
+
+## Deploy via FastAPI + Docker
+
+Mini-model `rf_small.pkl`, trained on 4 features:
+
+- `OverallQual`
+- `GrLivArea`
+- `GarageCars`
+- `TotalBsmtSF`
+
+**Starting the server:**
+
+```docker build -t house-price-api .```
+
+```docker run -p 8000:8000 house-price-api```
+
+
+**Example request:**
+
+```
+{
+  "OverallQual": 7,
+  "GrLivArea": 1800,
+  "GarageCars": 2,
+  "TotalBsmtSF": 900
+}
+```
+
+**Response body**
+
+{
+  "Predicted SalePrice": 213253.24
+}
+
 
 ## Skills and technologies
 
@@ -77,6 +123,8 @@ Random Forest showed the best performance:
 - Working with Git/GitHub
 - Machine learning principles (regression, log transforms)
 - Model evaluation
+- Deployment and API
+- Docker
 
 ## Links
 
@@ -139,6 +187,8 @@ Random Forest showed the best performance:
 
 │ ├── train_rf.py # RandomForest
 
+│ ├── train_small_rf.py  # Модель RandomForest (4 признака для API)
+
 │ └── ...
 
 ├── models/ # Сохранённые модели и метрики
@@ -149,7 +199,61 @@ Random Forest showed the best performance:
 
 ├── submissions/ # CSV-файлы для Kaggle
 
+├── submissions/           # Kaggle-файлы
+
+├── deployment/            # API-деплой
+
+│   ├── app/
+
+│   │   └── main.py        # FastAPI-приложение
+
+│   └── Dockerfile
+
 ├── README.md # Этот файл
+
+
+##  Деплой через FastAPI + Docker
+
+Мини-модель `rf_small.pkl`, обучена на 4 признаках:
+
+- `OverallQual`
+- `GrLivArea`
+- `GarageCars`
+- `TotalBsmtSF`
+
+**Запуск сервера:**
+
+```docker build -t house-price-api .```
+
+```docker run -p 8000:8000 house-price-api```
+
+**Пример запроса:**
+
+```
+{
+  "OverallQual": 7,
+  "GrLivArea": 1800,
+  "GarageCars": 2,
+  "TotalBsmtSF": 900
+}
+```
+
+**Example request:**
+
+```
+{
+  "OverallQual": 7,
+  "GrLivArea": 1800,
+  "GarageCars": 2,
+  "TotalBsmtSF": 900
+}
+```
+
+**Response body**
+
+{
+  "Predicted SalePrice": 213253.24
+}
 
 
 ## Навыки и технологии
@@ -160,6 +264,8 @@ Random Forest showed the best performance:
 - Работа с Git/GitHub
 - Принципы машинного обучения (регрессия, лог-преобразования)
 - Оценка моделей
+- Деплой и API
+- Docker
 
 ## Ссылки
 

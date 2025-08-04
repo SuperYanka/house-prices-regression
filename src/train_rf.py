@@ -36,8 +36,6 @@ print("Лучшие параметры:", grid.best_params_)
 
 model = grid.best_estimator_
 
-
-
 model.fit(X_train, y_train)
 y_pred = model.predict(X_train)
 
@@ -66,3 +64,8 @@ with open(metrics_path, 'w') as f:
 
 print(f"\nМодель сохранена: {model_path}")
 print(f"Метрики сохранены: {metrics_path}")
+
+
+pipeline_rf_path = os.path.join(BASE_DIR, '..', 'models', 'final_model.pkl')
+joblib.dump(model, pipeline_rf_path)
+print("Pipeline сохранен как final_model.pkl")
